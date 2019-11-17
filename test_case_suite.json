@@ -1,0 +1,72 @@
+{
+    "1a":  [
+        {
+            "test_input": "You are Right!!!\n",
+            "expect_output": "!!!thgiR era uoY"
+        },
+        {
+            "test_input": "This is 1 0 0 points.\n",
+            "expect_output": ".stniop 0 0 1 si sihT"
+        },
+        {
+            "test_input": "0\n",
+            "expect_output": "0"
+        }
+    ],
+    "1b":  [
+        {
+            "test_input": "You are Right!!!\n",
+            "expect_output": "!!!thgiR era uoY"
+        },
+        {
+            "test_input": "This is 1 0 0 points.\n",
+            "expect_output": ".stniop 0 0 1 si sihT"
+        },
+        {
+            "test_input": "0\n",
+            "expect_output": "0"
+        }
+    ],
+    "2": [
+        {
+            "test_input": "4\n",
+            "expect_output": "Enter a dollar amount: $20 bills: 0\n$10 bills: 0\n$5 bills: 0\n$1 bills: 4"
+        },
+        {
+            "test_input": "90\n",
+            "expect_output": "Enter a dollar amount: $20 bills: 4\n$10 bills: 1\n$5 bills: 0\n$1 bills: 0"
+        },
+        {
+            "test_input": "2019\n",
+            "expect_output": "Enter a dollar amount: $20 bills: 100\n$10 bills: 1\n$5 bills: 1\n$1 bills: 4"
+        }
+    ],
+    "3": [
+        {
+            "test_input": "This alphabet is so long\n",
+            "expect_output": "Enter a message: In B1FF-speak: TH15 4LPH483T 15 50 L0NG!!!!!!!!!!"
+        },
+        {
+            "test_input": "I want enter number 10\n",
+            "expect_output": "Enter a message: In B1FF-speak: 1 W4NT 3NT3R NUM83R 10!!!!!!!!!!"
+        },
+        {
+            "test_input": "What's C++?\n",
+            "expect_output": "Enter a message: In B1FF-speak: WH4T'5 C++?!!!!!!!!!!"
+        }
+    ],
+    "4": [
+        {
+            "test_input": "1/1/2000\n",
+            "expect_output": "Enter a date (mm/dd/yyyy): You entered the date January 1, 2000"
+        },
+        {
+            "test_input": "4/30/2009\n",
+            "expect_output": "Enter a date (mm/dd/yyyy): You entered the date April 30, 2009"
+        },
+        {
+            "test_input": "11/11/2019\n",
+            "expect_output": "Enter a date (mm/dd/yyyy): You entered the date November 11, 2019"
+        }
+    ]
+}
