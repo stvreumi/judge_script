@@ -115,6 +115,11 @@ class JudgeAction():
     
     def print_status(self):
         print(self.status)
+        if self.get_student_num() is not None:
+            print("scores: ")
+            pp.pprint(self.status.logs["score"])
+            print("comments: ")
+            pp.pprint(self.status.logs["comment"])
     
     @judge_utility.get_question_data
     def open_with_vim(self, q_num):
@@ -136,6 +141,7 @@ class JudgeAction():
     def give_score(self, q_num, score):
         self.status.exec_files[q_num]
         self.status.logs["score"][q_num] = int(score)
+        pp.pprint(self.status.logs["score"])
 
     @judge_utility.get_question_data
     def give_comment(self, q_num, comment):
