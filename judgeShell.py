@@ -92,7 +92,7 @@ class JudgeShell(cmd.Cmd):
         else:
             completions = [ f for f in unjudge_list
                             if f.startswith(text)
-                          ]
+                          ][0]
         return completions
     
     def do_exit(self, arg):
