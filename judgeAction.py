@@ -3,6 +3,7 @@ from glob import glob
 import pprint
 from subprocess import run
 import os.path
+from time import localtime, strftime
 
 import judge_utility
 
@@ -73,6 +74,7 @@ class JudgeStatus():
     def _save_and_show_judge(self):
         with open(self.result_json_name, "w") as f:
             json.dump(self.logs, f, indent=2)
+            print("save to: {}".format(self.result_json_name))
         print("scores: ")
         pp.pprint(self.logs["score"])
         print("comments: ")
@@ -80,24 +82,14 @@ class JudgeStatus():
     
     @staticmethod
     def get_result_json_name(student_num):
-        return "{}_result.json".format(student_num)
+        return "{}_result_{}.json"\
+            .format(student_num, strftime("%m%d%H%M%S", localtime()))
 
 class JudgeAction():
     def __init__(self):
         self.status = JudgeStatus()
     
     def start(self, student_num):
-        result_json_name = \
-            JudgeStatus.get_result_json_name(student_num)
-        
-        # check result existness to prevent overwrite
-        if os.path.exists(result_json_name):
-            ans = input("alread have result({}), still run again?(y/n)?")
-            if ans == "y":
-                pass
-            else:
-                print("go back...")
-                return
         
         # initialize status
         self.status.start_judge(student_num)
