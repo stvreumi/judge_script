@@ -2,15 +2,15 @@
     "1a":  [
         {
             "test_input": "You are Right!!!\n",
-            "expect_output": "!!!thgiR era uoY"
+            "expect_output": "Enter a message: Reversal is: !!!thgiR era uoY"
         },
         {
             "test_input": "This is 1 0 0 points.\n",
-            "expect_output": ".stniop 0 0 1 si sihT"
+            "expect_output": "Enter a message: Reversal is: .stniop 0 0 1 si sihT"
         },
         {
             "test_input": "0\n",
-            "expect_output": "0"
+            "expect_output": "Enter a message: Reversal is: 0"
         }
     ],
     "1b":  [
