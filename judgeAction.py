@@ -38,6 +38,7 @@ class JudgeStatus():
             student_dir = self.midterm_dir[self.student_num]
         except KeyError as err:
             print("No this student: {}".format(err))
+            return
 
         # ---compile---
         print("compile first...")

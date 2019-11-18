@@ -132,7 +132,7 @@ def _compile_all_in_dir(path):
 def _judge_idx(filename, idx_list):
     question_number = \
         os.path.basename(filename).split(".")[0][8:]\
-            .replace("-", "").replace("_", "")
+            .replace("-", "").replace("_", "").replace("(", "").replace(")", "")
     for i in idx_list:
         if i in question_number:
             return i 
