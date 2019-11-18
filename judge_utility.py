@@ -48,7 +48,7 @@ def _run_testcase(exec_file, test_case):
 
         outs, errs = map(lambda s: s.decode("utf-8"), exec_result)
         log = {
-            "status": "PASS" if outs.rstrip() == t["expect_output"] else "FAIL",
+            "status": "pass" if outs.rstrip() == t["expect_output"] else "fail",
             "test_input": t["test_input"],
             "expect_output": t["expect_output"],
             "exec_stdout": outs,
@@ -57,6 +57,11 @@ def _run_testcase(exec_file, test_case):
         testcase_logs.append(log)
     
     return testcase_logs
+
+def _highlight(ori_str, red="fail", green="succeed"):
+    return ori_str\
+        .replace(red, "\033[41m\033[37m{}\033[39m\033[49m".format(red))\
+        .replace(green, "\033[42m\033[37m{}\033[39m\033[49m".format(green))
 
 def get_question_data(func):
     "decorator of error handling when get judge files data"

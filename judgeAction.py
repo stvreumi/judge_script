@@ -6,7 +6,7 @@ import os.path
 
 import judge_utility
 
-pp = pprint.PrettyPrinter(indent=2)
+pp = pprint.PrettyPrinter(indent=2, width=60, compact=True)
 
 QUESTION_IDX = "1a,1b,2,3,4".split(",")
 with open("test_case_suite.json", "r") as f:
@@ -40,7 +40,7 @@ class JudgeStatus():
         compile_logs = judge_utility._compile_all_in_dir(student_dir)
         # print compile status
         print("Compile status:\n")
-        pp.pprint(compile_logs)
+        print(judge_utility._highlight(pp.pformat(compile_logs)))
 
         # ---get source files and executable files---
         files = glob("{}/*".format(student_dir))
@@ -125,7 +125,7 @@ class JudgeAction():
         exec_file = self.status.exec_files[q_num]
         test_case = TEST_CASE_SUITE[q_num]
         log = judge_utility._run_testcase(exec_file, test_case)
-        pp.pprint(log)
+        print(judge_utility._highlight(pp.pformat(log), green="pass"))
         self.status.logs["testcase_log"][q_num] = log
     
     @judge_utility.get_question_data
