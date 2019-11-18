@@ -143,7 +143,7 @@ class JudgeAction():
     @judge_utility.get_question_data
     def give_score(self, q_num, score):
         self.status.exec_files[q_num]
-        self.status.logs["score"][q_num] = int(score)
+        self.status.logs["score"][q_num] = float(score)
         pp.pprint(self.status.logs["score"])
 
     @judge_utility.get_question_data
