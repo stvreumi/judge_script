@@ -33,7 +33,10 @@ class JudgeStatus():
         self.result_json_name = \
             JudgeStatus.get_result_json_name(self.student_num)
             
-        student_dir = self.midterm_dir[self.student_num]
+        try:
+            student_dir = self.midterm_dir[self.student_num]
+        except KeyError as err:
+            print("No this student: {}".format(err))
 
         # ---compile---
         print("compile first...")
